@@ -1,12 +1,21 @@
-// const names: Array<string> = [];
-// // names[0].split("");
+// const names: Array<string> = []; // string[]
+// // names[0].split(' ');
 
-// const promise: Promise<any> = new Promise((resolve, reject) => {
+// const promise: Promise<number> = new Promise((resolve, reject) => {
 //   setTimeout(() => {
-//     resolve("This is Done!");
+//     resolve(10);
 //   }, 2000);
 // });
 
 // promise.then(data => {
-//   data.slipt(' ');
+//   // data.split(' ');
 // })
+
+function merge<T extends object, U extends object>(objA: T, objB: U) {
+  return Object.assign(objA, objB);
+}
+
+const mergedObj = merge(
+  { name: "Steve", hobbies: ["Sports", "Basketball"] },
+  { age: 39 }
+);
