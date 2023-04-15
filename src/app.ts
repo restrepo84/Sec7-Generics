@@ -17,7 +17,7 @@ function merge<T extends object, U extends object>(objA: T, objB: U) {
 
 const mergedObj = merge(
   { name: "Steve", hobbies: ["Sports", "Basketball"] },
-  { age: 30 }
+  { age: 39 }
 );
 console.log(mergedObj);
 
@@ -36,3 +36,12 @@ function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
 }
 
 console.log(countAndDescribe(["Sports", "Cooking"]));
+
+function extractAndConvert<T extends object, U extends keyof T>(
+  obj: T,
+  key: U
+) {
+  return "Value: " + obj[key];
+}
+
+extractAndConvert({ name: "Steve" }, "name");
